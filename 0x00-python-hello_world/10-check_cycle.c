@@ -5,7 +5,7 @@
   * @head: the first elem of the list
   * Return: 1 if cycle found 0 otherwise
   **/
-int	check_cycles(listint_t *head)
+int	check_cycle(listint_t *head)
 {
 	listint_t	*node;
 	listint_t	*node2;
