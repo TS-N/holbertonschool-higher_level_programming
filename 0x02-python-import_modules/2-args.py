@@ -5,7 +5,7 @@ if __name__ == "__main__":
     if l == 1:
         s = "s."
     elif l == 2:
-        s =":"
+        s = ":"
     else:
         s = "s:"
     print("{:d} argument{}".format(l - 1, s))
