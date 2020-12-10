@@ -6,5 +6,9 @@ def magic_calculation(a, b):
         for i in range(4, 6):
             c = add(c, i)
         return c
-    sub(a, b)
-    return 0
+    else:
+        return (sub(a, b))
+    return None
+
+import dis
+dis.dis(magic_calculation)
