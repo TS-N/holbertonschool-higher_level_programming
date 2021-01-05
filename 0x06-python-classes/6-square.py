@@ -42,7 +42,9 @@ class Square():
             Args: position (tuple): the position of the square \
                 based on the upper left corner
                                     """
-        if type(position) and len(position) != 2:
+        if type(position) != tuple or len(position):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif 2 or position[0] < 0 or position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = position
