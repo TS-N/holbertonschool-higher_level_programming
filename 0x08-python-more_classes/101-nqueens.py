@@ -65,4 +65,5 @@ def main():
         sys.exit(1)
     solve(N)
 
-main()
+if __name__ == "__main__":
+    main()
