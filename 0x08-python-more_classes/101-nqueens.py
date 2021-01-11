@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 import sys
+"""
+A program that solves all possible N-queens problem solutions
+"""
 
 
 def indiag(la, li):
+    """ checks if a queen is in the diagonal of another """
     ydiff = li[0] - la[0]
     if li[1] == la[1] + ydiff or li[1] == la[1] - ydiff:
         return True
@@ -11,6 +15,7 @@ def indiag(la, li):
 
 
 def conflict(l, i):
+    """ checks if a queen is conflicting with another """
     x = l[i][1]
     for a in range(0, i):
         if l[a][1] == x or indiag(l[a], l[i]) is True:
@@ -19,6 +24,7 @@ def conflict(l, i):
 
 
 def place(l, i, N):
+    """ recursive backtracking function that solves Nqueen problem """
     if i >= N:
         return True
     if i < 0:
@@ -35,6 +41,7 @@ def place(l, i, N):
 
 
 def solve(N):
+    """ gives all solution to a Nqueen solution """
     l = list([i, -1] for i in range(0, N))
     while place(l, 0, N) is True:
         print("{}".format(l))
@@ -44,6 +51,7 @@ def solve(N):
 
 
 def main():
+    """ main function """
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         return 1
