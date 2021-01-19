@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" a Base class for geometry shapes"""
+""" a Base class for geometry shapes
+used as core and value checks for shapes
+"""
 
 
 class BaseGeometry():
