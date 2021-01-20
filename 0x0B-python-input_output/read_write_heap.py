@@ -7,8 +7,8 @@ import os
 def main():
     """ finds a string in the heap of a running process, and replaces it """
     if len(sys.argv) != 4:
-        raise TypeError("usage: read_write_heap.py pid 
-                search_string replace_string")
+        print("usage: read_write_heap.py pid search_string replace_string")
+        return 1
     pid = sys.argv[1]
     old_string = sys.argv[2]
     new_string = sys.argv[3]
@@ -22,8 +22,6 @@ def main():
         sp = line.split()
         if '[heap]' in sp:
             break
-    print("[*]Heap:\n\tAddress range: {}\n\t
-            Permissions: {}\nFull line: {}".format(sp[0], sp[1], sp))
     addresses = sp[0].split('-')
     start_add = int(addresses[0], 16)
     end_add = int(addresses[1], 16)
@@ -35,8 +33,6 @@ def main():
                 s = mem.read(len(old_string))
                 mem.seek(start_add + rel_add, 0)
                 if s == bytes(old_string, 'ascii'):
-                    print('replace_string found at address {}'
-                            .format(hex(start_add + rel_add)))
                     mem.write(bytes(new_string, 'ascii'))
                     for i in range(0, pad):
                         mem.write(bytes('\0', 'ascii'))
@@ -46,6 +42,7 @@ def main():
                 pass
             mem.seek(1, 1)
             rel_add += 1
+    return 0
 
 if __name__ == "__main__":
     main()
