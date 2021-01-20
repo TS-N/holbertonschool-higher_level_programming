@@ -10,7 +10,7 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         super().integer_validator("width", width)
         self.__width = width
-        super().integer_validator("hight", height)
+        super().integer_validator("height", height)
         self.__height = height
 
     def area(self):
@@ -22,5 +22,3 @@ class Rectangle(BaseGeometry):
                 self.__width,
                 self.__height)
 
-    def __print__(self):
-        print(self.__str__())
