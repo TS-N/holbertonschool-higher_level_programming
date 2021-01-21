@@ -16,7 +16,7 @@ class Student:
     def to_json(self, attrs=None):
         """ retreives a dict of all the class attributes """
         al = self.__dict__
-        if not attrs:
+        if attrs is None:
             return al
         dic = {}
         for attr in attrs:
