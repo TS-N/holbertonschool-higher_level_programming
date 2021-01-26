@@ -10,6 +10,7 @@ class Base:
     id = 0
 
     def __init__(self, id=None):
+        """ initialise the attribute of this instance """
         if id is not None:
             self.id = id
         else:
