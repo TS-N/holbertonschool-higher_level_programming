@@ -48,5 +48,5 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        self.__size = value
         super().update(self.id, value, value)
+        self.__size = value
