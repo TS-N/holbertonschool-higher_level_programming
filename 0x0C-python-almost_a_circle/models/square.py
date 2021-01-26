@@ -34,6 +34,7 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        """ returns the dictionary representation of a Rectangle """
         d = {}
         l = ['id', 'size', 'x', 'y']
         for e in l:
@@ -42,6 +43,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """ size getter """
         return self.__size
 
     @size.setter
