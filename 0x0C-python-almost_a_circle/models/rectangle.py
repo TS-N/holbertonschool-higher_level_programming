@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" 2. First Rectangle """
+""" 2. First Rectangle
+    Rectangle class inherited from Base class
+"""
 from models.base import Base
 
 

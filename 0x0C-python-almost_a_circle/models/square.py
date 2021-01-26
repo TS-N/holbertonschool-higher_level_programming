@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""And now the Square """
+"""And now the Square
+    The square class tha inherits from Rectangle
+    which inherits from Base
+"""
 from models.rectangle import Rectangle
 
 
