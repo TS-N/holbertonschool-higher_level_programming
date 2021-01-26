@@ -28,8 +28,8 @@ class Rectangle(Base):
 
     def display(self):
         """ prints in stdout the Rectangle instance with the character # """
-        s = '\n' * self.__y +
-        (' ' * self.__x + '#' * self.__width + '\n') * self.__height
+        h = self.__height
+        s = '\n' * self.__y + (' ' * self.__x + '#' * self.__width + '\n') * h
         print(s, end="")
 
     def update(self, *args, **kwargs):
