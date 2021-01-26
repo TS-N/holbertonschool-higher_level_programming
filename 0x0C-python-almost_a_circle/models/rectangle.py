@@ -13,16 +13,16 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-
     def area(self):
         """ computes the area of the reactangle """
         return self.__width * self.__height
 
     def display(self):
         """ prints in stdout the Rectangle instance with the character # """
-        s = '\n' * self.__y + (' ' * self.__x + '#' * self.__width + '\n') * self.__height
+        s = '\n' * self.__y +
+        (' ' * self.__x + '#' * self.__width + '\n') * self.__height
         print(s, end="")
-    
+
     def update(self, *args, **kwargs):
         """ that assigns an argument to each attribute:
             1st arg should be the id attribute
@@ -48,9 +48,9 @@ class Rectangle(Base):
         return d
 
     def __str__(self):
-        s = "[Rectangle] (" + str(self.id) + ") " + str(self.__x) + "/" + str(self.__y) + " - " + str(self.__width) + "/" + str(self.__height)
+        s = "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height)
         return s
-
 
     @property
     def width(self):
@@ -66,7 +66,6 @@ class Rectangle(Base):
         else:
             self.__width = value
 
-
     @property
     def height(self):
         """ height getter """
@@ -81,7 +80,6 @@ class Rectangle(Base):
         else:
             self.__height = value
 
-
     @property
     def x(self):
         """ x getter """
@@ -95,7 +93,6 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         else:
             self.__x = value
-
 
     @property
     def y(self):
