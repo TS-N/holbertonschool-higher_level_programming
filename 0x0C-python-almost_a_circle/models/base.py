@@ -64,3 +64,18 @@ class Base:
             return objs
         except Exception as e:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serialize in CSV """
+        pass
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes in CSV """
+        pass
+
+    @staticmethod
+    """ opens a window and draws all the Rectangles and Squares """
+    def draw(list_rectanlges, list_squares):
+        pass
