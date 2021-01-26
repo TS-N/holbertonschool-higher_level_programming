@@ -6,7 +6,13 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """ Rectangle that inherits from Base """
+    """ Rectangle that inherits from Base
+            Attributes:
+                __width : the width of the rectangle
+                __height : the height of the rectangle
+                __x : the horizontal shift of the rectangle
+                __y : the vertical shift of the rectangle
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
