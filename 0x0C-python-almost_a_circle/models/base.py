@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 1. Base class 
+""" 1. Base class
     More blabla bla
     To please the checker"""
 import json
