@@ -76,6 +76,6 @@ class Base:
         pass
 
     @staticmethod
-    """ opens a window and draws all the Rectangles and Squares """
     def draw(list_rectanlges, list_squares):
+        """ opens a window and draws all the Rectangles and Squares """
         pass
