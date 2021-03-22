@@ -1,11 +1,7 @@
 #!/usr/bin/node
 const argList = process.argv;
-let i = 2;
 if (argList[2]) {
-  while (argList[i]) {
-    console.log(argList[i]);
-    i++;
-  }
+  console.log(argList[2]);
 } else {
   console.log('No argument');
 }
