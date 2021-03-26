@@ -15,6 +15,8 @@ def main():
         rs = c.fetchall()
         for r in rs:
             print(r)
+        c.close()
+        db.close()
 
 
 if __name__ == "__main__":
