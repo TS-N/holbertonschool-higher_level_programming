@@ -12,7 +12,7 @@ def main():
                          passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
     c.execute("SELECT * FROM states \
-               WHERE name = '{:s}' ORDER BY id ASC".format(sys.argv[4]))
+               WHERE name = BINARY '{:s}' ORDER BY id ASC".format(sys.argv[4]))
     rs = c.fetchall()
     for r in rs:
         print(r)
