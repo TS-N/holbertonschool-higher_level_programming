@@ -3,7 +3,7 @@
 using SQLAlchemy """
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.sql import select
+from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 
@@ -24,14 +24,13 @@ def main():
                                                            host,
                                                            port,
                                                            database))
-    with engine.connect() as conn:
-        rs = conn.execute('SELECT * FROM states ORDER BY id ASC LIMIT 1')
-        rs = rs.fetchall()
-        if rs == []:
-            print("Nothing")
-        else:
-            for r in rs:
-                print("{}: {}".format(r[0], r[1]))
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    rs = session.query(State).order_by(State.id).first()
+    if rs is None:
+        print('Nothing')
+    else:
+        print("{}: {}".format(rs.id, rs.name))
 
 
 if __name__ == "__main__":
