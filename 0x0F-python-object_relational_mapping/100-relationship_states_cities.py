@@ -31,6 +31,7 @@ def main():
     ci = City(name="San Fransisco", state=State(name="California"))
     session.add(ci)
     session.commit()
+    session.close()
 
 
 if __name__ == "__main__":
