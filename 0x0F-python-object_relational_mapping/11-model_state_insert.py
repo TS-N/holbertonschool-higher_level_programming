@@ -27,7 +27,7 @@ def main():
     session = Session()
     new_entry = State(id=None, name='Louisiana')
     session.add(new_entry)
-    session.flush()
+    session.commit()
     print(new_entry.id)
 
 
