@@ -7,16 +7,15 @@ import sys
 def main():
     """ main function """
 
-    if (len(sys.argv) == 4):
-        db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                             passwd=sys.argv[2], db=sys.argv[3])
-        c = db.cursor()
-        c.execute("SELECT * FROM states ORDER BY id ASC")
-        rs = c.fetchall()
-        for r in rs:
-            print(r)
-        c.close()
-        db.close()
+    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
+    c.execute("SELECT * FROM states ORDER BY id ASC")
+     rs = c.fetchall()
+    for r in rs:
+        print(r)
+    c.close()
+    db.close()
 
 
 if __name__ == "__main__":
