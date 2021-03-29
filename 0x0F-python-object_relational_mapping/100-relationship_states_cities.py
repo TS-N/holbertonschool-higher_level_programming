@@ -28,8 +28,10 @@ def main():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    ci = City(name="San Fransisco", state=State(name="California"))
+    ci = City(name="San Fransisco")
+    state=State(name="California", cities=ci)
     session.add(ci)
+    session.add(state)
     session.commit()
     session.close()
 
