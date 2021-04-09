@@ -7,12 +7,13 @@ from urllib import request, error
 import sys
 
 
-url = sys.argv[1]
+if __name__ == "__main__":
+    url = sys.argv[1]
 
-req = request.Request(url)
-try:
-    with request.urlopen(req) as response:
-        the_page = response.read()
-        print(the_page.decode('utf-8'))
-except error.HTTPError as e:
-    print('Error code: {}'.format(e.code))
+    req = request.Request(url)
+    try:
+        with request.urlopen(req) as response:
+            the_page = response.read()
+            print(the_page.decode('utf-8'))
+    except error.HTTPError as e:
+        print('Error code: {}'.format(e.code))
